@@ -1,0 +1,28 @@
+<app-home></app-home>
+<div class="container d-flex justify-content-center">
+
+  <table class="text-center">
+    <tr>
+      <th>ID</th>
+      <th>Tên Địa Điểm</th>
+      <th>Giá</th>
+      <th>Detail</th>
+      <th colspan="2">Action</th>
+    </tr>
+    <tr *ngFor="let a of locals">
+      <td>{{a.id}}</td>
+      <td>{{a.title}}</td>
+      <td>{{a.price}}</td>
+      <td><button class="btn btn-info" [routerLink]="['/detail',a.id]">Detail</button></td>
+      <td>
+        <button class="btn btn-warning" [routerLink]="['/formcreat',a.id]">Update</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="delete(a.id)">Delete</button>
+      </td>
+    </tr>
+
+  </table>
+
+</div>
+

@@ -1,0 +1,19 @@
+<app-home></app-home>
+<form [formGroup]="formLocal" (ngSubmit)="onSubmit()">
+  <input type="text" value="" formControlName="id" hidden="">
+  <div>
+    <label for="name" class="form-label">Title: </label>
+    <input id="name" formControlName="title" class="form-control" placeholder="Nhập tên">
+    <div *ngIf="formLocal.get('name')?.touched&&formLocal.get('name')?.hasError('required')">Phải nhập tên</div>
+  </div>
+  <div>
+    <label for="price" class="form-label">Price: </label>
+    <input id="price" formControlName="price" class="form-control" placeholder="Thêm giá">
+  </div>
+  <div>
+    <label for="description" class="form-label">Mô Tả: </label>
+    <input id="description" formControlName="description" class="form-control" placeholder="Thêm mô tả">
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+  <button (click)="back()" class="btn btn-primary">Back</button>
+</form>

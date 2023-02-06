@@ -1,0 +1,16 @@
+<app-home></app-home>
+<form >
+  <p>
+    <label for="name">Tên Tour: </label>
+  <p id="name" >{{local.title}}
+  </p>
+  <p>
+    <label for="price" class="form-label">Giá: </label>
+  <p id="price" > {{local.price}}
+  </p>
+  <p class="mb-3 mt-3" >
+    <label for="category" class="form-label">Mô Tả: </label>
+  <p id="category">{{local.description}}</p>
+
+  <button (click)="back()" class="btn btn-primary">Back</button>
+</form>
